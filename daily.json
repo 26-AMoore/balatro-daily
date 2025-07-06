@@ -1,0 +1,14 @@
+{
+	"id": "balatro-daily",
+	"name": "Daily",
+	"display_name": "Daily Run",
+	"author": ["xelA"],
+	"description": "Daily seed, stake, and deck challenge!",
+	"prefix": "daily_",
+	"main_file": "main.lua",
+	"priority": 0,
+	"badge_colour": "ff00ff",
+	"badge_text_colour": "0f0f0f",
+	"version": "0.0.1",
+	"dependencies": [],
+}
