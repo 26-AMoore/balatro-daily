@@ -5,6 +5,7 @@ assert(load(nativefs.read(lovely.mod_dir .. "/daily/" .. "setup.lua")))()
 
 assert(load(nativefs.read(lovely.mod_dir .. "/daily/net/" .. "finish.lua")))()
 assert(load(nativefs.read(lovely.mod_dir .. "/daily/net/" .. "daily_allowed.lua")))()
+assert(load(nativefs.read(lovely.mod_dir .. "/daily/net/" .. "leaderboard.lua")))()
 
 assert(load(nativefs.read(lovely.mod_dir .. "/daily/logic/" .. "start_daily.lua")))()
 
