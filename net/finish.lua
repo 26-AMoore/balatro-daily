@@ -1,23 +1,22 @@
 G.FUNCS.upload_score = function ()
+	if G.GAME.can_start_daily == false then
+		return
+	end
 	G.GAME.daily_name = "xela"
+	G.GAME.can_start_daily = false
 
 	local https = require "SMODS.https"
 	local steam = require "luasteam"
 
-	local id = "\"" .. steam.user.getSteamID() .. "\"";
+	local id = "\"" .. tostring(steam.user.getSteamID()) .. "\"";
 	local name = "\"" .. G.GAME.daily_name .. "\""
-	local ante = G.GANE.round_scores['furthest_ante']
-	local round = G.GAME.round_scores['furthest_round']
-	local best_hand = G.GAME.round_scores['hand']
-	local times_rerolled = G.GAME.round_scores['times_rerolled']
+	local ante = G.GAME.round_scores['furthest_ante'].amt
+	local round = G.GAME.round_scores['furthest_round'].amt
+	local best_hand = G.GAME.round_scores['hand'].amt
+	local times_rerolled = G.GAME.round_scores['times_rerolled'].amt
 	local endless = not (ante >= 8)
 
-	print(https.request("http://127.0.0.1:3030/upload", {
-		headers = {
-			["content-type"] = "application/json",
-		},
-		method = "POST",
-		data = "{ \"id\": " .. id ..
+	local data = "{ \"id\": " .. id ..
 		", \"name\": " .. name ..
 		", \"ante\": " .. ante ..
 		", \"round\": " .. round ..
@@ -25,5 +24,13 @@ G.FUNCS.upload_score = function ()
 		", \"rerolls\": " .. times_rerolled ..
 		", \"endless\": " .. tostring(endless) ..
 		" }"
+
+	print(https.request("http://127.0.0.1:3030/upload", {
+		headers = {
+			["content-type"] = "application/json",
+		},
+		method = "POST",
+		data = data
 	}))
+	print(data)
 end

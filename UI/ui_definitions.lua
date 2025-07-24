@@ -1,8 +1,10 @@
+-- THANK YOU TO THE SATURN MOD CREATORS FOR MOST OF THIS CODE, I WILL BE ETERNALLY GREATFUL
 local create_UIBox_main_menu_buttons_ref = create_UIBox_main_menu_buttons
+
 function daily_button_color()
-	if (G.GAME.Completed_daily) == nil then get_daily_completion() end
-	if (not G.GAME.Completed_daily) then return HEX('0faF20') else return HEX('0f0f0f') end
+	if daily_allowed() then return HEX('0faF20') else return HEX('0f0f0f') end
 end
+
 function create_UIBox_main_menu_buttons()
 	local text_scale = 0.45
 	local daily_run_button = UIBox_button({
@@ -14,6 +16,8 @@ function create_UIBox_main_menu_buttons()
 		colour = daily_button_color(),
 		label = { "Daily" },
 		scale = text_scale * 1.2,
+		debuff = true,
+		juice = true
 	})
 	local menu = create_UIBox_main_menu_buttons_ref()
 	local spacer = G.F_QUIT_BUTTON and { n = G.UIT.C, config = { align = "cm", minw = 0.2 }, nodes = {} } or nil
