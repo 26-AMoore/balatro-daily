@@ -21,3 +21,9 @@ function get_leaderboard_scores(i)
 	end
 	return nodes
 end
+
+function get_user_info(id)
+	local https = require("socket.http")
+	https.request("")
+	return {place = 1};
+end

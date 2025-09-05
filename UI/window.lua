@@ -18,10 +18,11 @@ function get_scoreboard()
 end
 
 function get_user_info_board()
+	local user_info = get_user_info()
 	local player_place = 1; --DEBUG
 	return {
 		{n=G.UIT.R, config = {padding = .15, r=.1, minw = 4, maxw = 4, minh = 3, maxh = 3, colour = G.C.UI.BACKGROUND_DARK, outline = .5, outline_colour = G.C.UI.BACKGROUND_LIGHT, align = "cm"}, nodes = {
-			{n=G.UIT.T, config = {text = "#" .. player_place, scale = 3.5, colour = get_place_color(player_place)}}
+			{n=G.UIT.T, config = {text = "#" .. user_info.place, scale = 3.5, colour = get_place_color(player_place)}}
 		}},
 		{n=G.UIT.R, config = {r=.1, minw = 4, maxw = 4, minh = 1, maxh = 1, colour = G.C.UI.BACKGROUND_DARK, outline = .5, outline_colour = G.C.UI.BACKGROUND_LIGHT, align = "cm"}, nodes = {
 			{n=G.UIT.T, config = {text = G.DAILY.name, scale = 1, colour = G.C.WHITE}}
@@ -34,7 +35,7 @@ function get_player_score_board()
 	return {
 		{n = G.UIT.R, config = {align = "cm", r=.25,minw = 4, maxw = 4, minh = 1, maxh = 1, colour = G.C.UI.BACKGROUND_DARK, outline_colour = G.C.UI.BACKGROUND_LIGHT, outline = 1}, nodes = {
 			{n = G.UIT.C, config = {}, nodes = {
-				{n = G.UIT.T, config = {text = "Best Hand: " .. G.DAILY.best_hand, colour = G.C.WHITE, scale = 1}}}}
+				{n = G.UIT.T, config = {text = "Best Hand: " .. G.DAILY.score, colour = G.C.WHITE, scale = 1}}}}
 		}},
 		{n = G.UIT.R, config = {align = "cm", r=.25,minw = 4, maxw = 4, minh = 1, maxh = 1, colour = G.C.UI.BACKGROUND_DARK, outline_colour = G.C.UI.BACKGROUND_LIGHT, outline = 1}, nodes = {
 			{n = G.UIT.C, config = {}, nodes = {

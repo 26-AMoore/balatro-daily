@@ -1,7 +1,7 @@
 # Daily Run Mod
 
 ## Installation
-This mod requires both Steammodded and Lovely
+This mod requires both [Steammodded](https://github.com/Steamodded/smods) and [Lovely](https://github.com/ethangreen-dev/lovely-injector)
 After that simply clone this repo and put it in your Mods folder
 This mod has been tested on both linux and mac, and should probably work on windows
 
@@ -16,9 +16,9 @@ This mod adds a new button into the start screen that allows you to complete a d
 - Website
 
 ## Credits
-Thank you to the Saturn Mod, which a lot of this mod (expecially lovely injections) was built based on
+Thank you to the [Saturn Mod](https://github.com/OceanRamen/Saturn), which a lot of this mod (expecially lovely injections) was built based on
 Thank you to anyone who playtested this mod
-Thank you to the Balatro modding discord server for answering any questions
+Thank you to the [Steammodded Discord Server](https://discord.gg/jbKweaeD) for answering any questions
 
 ## Final Note
 This is my first ever Balatro mod, and my first large lua project. Hopefully the code isent that bad (sorry in advance)

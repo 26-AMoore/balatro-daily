@@ -32,4 +32,6 @@ G.FUNCS.upload_score = function ()
 		data = data
 	}))
 	print(data)
+	G.DAILY.score = best_hand
+	G.DAILY.ante = ante
 end
